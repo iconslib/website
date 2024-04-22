@@ -2,9 +2,16 @@
   import '@fontsource-variable/rubik';
   import '../app.css';
 
-  import Topbar from '$lib/components/topbar.svelte';
+  import Wrapper from '$components/global/wrapper.svelte';
 </script>
 
-<Topbar />
+<Wrapper>
+  <slot />
+</Wrapper>
 
-<slot />
+<style>
+  :global(body) {
+    background-color: theme(backgroundColor.neutral.100);
+    text: theme(textColor.neutral.900);
+  }
+</style>

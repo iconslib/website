@@ -3,9 +3,9 @@
   import Logo from './logo.svelte';
 </script>
 
-<div class="w-full">
-  <Wrapper class="flex flex-row p-5">
-    <a href="/" class="w-[200px] h-10">
+<div class="w-full py-5 fixed top-0 left-0">
+  <Wrapper class="flex flex-row px-10">
+    <a href="/" class="block w-[200px] h-10">
       <Logo />
     </a>
 
