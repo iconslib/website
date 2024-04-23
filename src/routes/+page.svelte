@@ -11,7 +11,7 @@
 
 <div class="w-full grid grid-cols-4 gap-5">
   <IconButton icon={SvelteIcon} label="Svelte" href="/frameworks/svelte" />
-  <IconButton icon={SolidjsIcon} label="SolidJS" href="/frameworks/solidjs" />
-  <IconButton icon={VueIcon} label="Vue" href="/frameworks/vue" />
-  <IconButton icon={ReactIcon} label="React" href="/frameworks/react" />
+  <IconButton icon={SolidjsIcon} label="SolidJS" isDisabled />
+  <IconButton icon={VueIcon} label="Vue" isDisabled />
+  <IconButton icon={ReactIcon} label="React" isDisabled />
 </div>
