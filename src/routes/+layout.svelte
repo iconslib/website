@@ -11,7 +11,7 @@
 
 <style>
   :global(body) {
-    background-color: theme(backgroundColor.neutral.100);
+    background-color: theme(backgroundColor.neutral.50);
     text: theme(textColor.neutral.900);
   }
 </style>

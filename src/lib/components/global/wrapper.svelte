@@ -9,7 +9,7 @@
   const { children, ...rest }: Props = $props();
 </script>
 
-<div class={`w-full xl:max-w-5xl mx-auto ${rest.class ?? ''}`}>
+<div class={`w-full px-5 xl:px-0 xl:max-w-5xl mx-auto ${rest.class ?? ''}`}>
   {#if children}
     {@render children()}
   {/if}

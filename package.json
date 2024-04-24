@@ -16,6 +16,7 @@
 	"devDependencies": {
 		"@fontsource-variable/rubik": "^5.0.22",
 		"@fontsource/fira-mono": "^4.5.10",
+		"@iconslib/svelte": "^0.0.10",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
