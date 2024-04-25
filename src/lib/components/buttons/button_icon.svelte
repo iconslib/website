@@ -22,7 +22,9 @@
     <div class="w-full h-full absolute top-0 left-0 bg-neutral-100/55 z-20"></div>
   {/if}
 
-  <div class="relative z-0 w-full h-full flex flex-row items-center justify-center">
+  <div
+    class={`relative z-0 w-full h-full flex flex-row gap-3 items-center justify-center ${label ? 'p-3' : 'p-2'}`}
+  >
     <svelte:component this={icon} class="h-6 w-6 text-neutral-200" />
 
     {label ? label : null}

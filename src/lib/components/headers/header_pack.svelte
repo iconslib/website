@@ -1,7 +1,11 @@
 <script lang="ts">
   import type { PackItemType } from '$lib/packs';
+
+  import { Link, LogoGithub } from '@iconslib/svelte/ionicons';
+
   import BackgroundSvg from '$lib/images/background.svg';
   import Logo from '$components/global/logo.svelte';
+  import ButtonIcon from '$components/buttons/button_icon.svelte';
 
   interface Props {
     data: PackItemType;
@@ -25,7 +29,7 @@
 
       <nav></nav>
     </div>
-    <div class="flex flex-1 flex-col justify-end">
+    <div class="flex flex-1 flex-col justify-end mb-5">
       <h1 class="mt-6 mb-5 font-bold leading-9 tracking-tight text-neutral-900 md:text-5xl">
         {data.title}.
       </h1>
@@ -33,6 +37,15 @@
         <p>A set of open source high quality icons for you next project.</p>
         <p>MIT licensed, optimized, free.</p>
       </div>
+    </div>
+    <div class="flex flex-row gap-5">
+      {#if data.links.github}
+        <ButtonIcon icon={LogoGithub} href={data.links.github} label="GitHub" />
+      {/if}
+
+      {#if data.links.website}
+        <ButtonIcon icon={Link} href={data.links.website} label="Website" />
+      {/if}
     </div>
   </div>
 </div>

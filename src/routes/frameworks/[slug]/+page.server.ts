@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 
-import frameworks from '$lib/frameworks';
+import { data as frameworks } from '$lib/frameworks.json';
 
 export const load: PageServerLoad = async ({ params }) => {
   const framework = frameworks.find((el) => el.slug === (params.slug as keyof typeof frameworks));

@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "title": "Svelte",
+      "slug": "svelte",
+      "package": "@iconslib/svelte",
+      "links": {
+        "website": "https://svelte"
+      },
+      "isActive": true
+    },
+    {
+      "title": "SolidJS",
+      "slug": "solidjs",
+      "package": "@iconslib/solid",
+      "links": {
+        "website": "https://solidjs.com"
+      },
+      "isActive": false
+    },
+    {
+      "title": "Vue",
+      "slug": "vue",
+      "package": "@iconslib/vue",
+      "links": {
+        "website": "http://vuejs.org"
+      },
+      "isActive": false
+    },
+    {
+      "title": "React",
+      "slug": "react",
+      "package": "@iconslib/react",
+      "links": {
+        "website": "http://https://react.dev"
+      },
+      "isActive": false
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import MainHeader from '$components/headers/main_header.svelte';
+  import HeaderMain from '$components/headers/header_main.svelte';
 
   import FrameworksList from '$components/lists/frameworks_list.svelte';
   import PacksList from '$components/lists/packs_list.svelte';
 </script>
 
-<MainHeader />
+<HeaderMain />
 <FrameworksList />
 <PacksList />

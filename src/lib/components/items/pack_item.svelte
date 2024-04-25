@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PackItemType } from '$lib/packs';
+  import type { PackItemType } from '$lib/types';
   import { LogoGithub, Link } from '@iconslib/svelte/ionicons';
 
-  import IconButton from '$components/buttons/icon_button.svelte';
+  import ButtonIcon from '$components/buttons/button_icon.svelte';
 
   interface Props {
     data: PackItemType;
@@ -19,11 +19,11 @@
 
     <div class="flex flex-1 gap-3 justify-end">
       {#if data.links.github}
-        <IconButton icon={LogoGithub} href={data.links.github} />
+        <ButtonIcon icon={LogoGithub} href={data.links.github} />
       {/if}
 
       {#if data.links.website}
-        <IconButton icon={Link} href={data.links.website} />
+        <ButtonIcon icon={Link} href={data.links.website} />
       {/if}
     </div>
   </div>

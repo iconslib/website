@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { ComponentType } from 'svelte';
   import type { PageData } from './$types';
-  import packs from '$lib/packs';
-  import PackHeader from '$components/headers/pack_header.svelte';
+  import { data as packs } from '$lib/packs.json';
+  import HeaderPack from '$components/headers/header_pack.svelte';
 
   interface Props {
     data: PageData;
@@ -12,7 +12,7 @@
   const packItem = packs.find((el) => el.slug === 'feather')!;
 </script>
 
-<PackHeader data={packItem} />
+<HeaderPack data={packItem} />
 
 {#await data.icons}
   <p>...waiting</p>
