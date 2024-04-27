@@ -14,7 +14,7 @@
 <div class="w-full bg-white border-[1px] border-neutral-200 rounded-lg">
   <div class="w-full flex flex-row items-center gap-5 p-5 border-b-[1px] border-neutral-200">
     <a href={`/packs/${data.slug}`}>
-      <h2 class="w-full flex-1 font-semibold text-xl">{data.title}</h2>
+      <h2 class="w-full flex-1 font-semibold text-xl hover:underline">{data.title}</h2>
     </a>
 
     <div class="flex flex-1 gap-3 justify-end">

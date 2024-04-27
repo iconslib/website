@@ -1,41 +1,38 @@
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
-  import type { PageData } from './$types';
+  import * as icons from '@iconslib/svelte/heroicons';
 
+  import { page } from '$app/stores';
   import { data as packs } from '$lib/packs.json';
   import HeaderPack from '$components/headers/header_pack.svelte';
+  import ButtonDefault from '$components/buttons/button_default.svelte';
+  import ItemIcon from '$components/items/item_icon.svelte';
 
-  interface Props {
-    data: PageData;
-  }
-
-  const { data }: Props = $props();
-  let variant = $state<'24Outline' | '24Solid' | '20Solid' | '16Solid'>('24Outline');
+  const variantsMap = {
+    outline: '24Outline',
+    solid: '24Solid',
+    mini: '20Solid',
+    micro: '16Solid'
+  };
+  const variant = $derived($page.url.searchParams.get('variant') ?? 'outline');
+  const filteredIcons = $derived(
+    Object.entries(icons)
+      .filter(([key]) => key.includes(variantsMap[variant as keyof typeof variantsMap]))
+      .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+  );
   const packItem = packs.find((el) => el.slug === 'heroicons')!;
 </script>
 
 <HeaderPack data={packItem} />
 
-<button onclick={() => (variant = '24Outline')}>Outline Icons</button>
-<button onclick={() => (variant = '24Solid')}>Solid Icons</button>
-<button onclick={() => (variant = '20Solid')}>Mini Icons</button>
-<button onclick={() => (variant = '16Solid')}>Micro Icons</button>
+<div class="w-full grid grid-cols-4 gap-5 mb-5">
+  <ButtonDefault label="Outline" isActive={variant === 'outline'} href="?variant=outline" />
+  <ButtonDefault label="Solid" isActive={variant === 'solid'} href="?variant=solid" />
+  <ButtonDefault label="Mini" isActive={variant === 'mini'} href="?variant=mini" />
+  <ButtonDefault label="Micro" isActive={variant === 'micro'} href="?variant=micro" />
+</div>
 
-{#await data.icons}
-  <p>...waiting</p>
-{:then icons}
-  <div class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
-    {#each Object.entries(icons) as [key, icon]}
-      {#if key.includes(variant)}
-        <div
-          class="
-          w-full h-[8rem] bg-white rounded-lg border-[1px] border-neutral-200
-          flex items-center justify-center
-        "
-        >
-          <svelte:component this={icon as ComponentType} class="w-8 h-8" />
-        </div>
-      {/if}
-    {/each}
-  </div>
-{/await}
+<div class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
+  {#each filteredIcons as [key, icon]}
+    <ItemIcon data={{ key, pack: packItem.slug, icon }} />
+  {/each}
+</div>

@@ -1,9 +1,3 @@
-import type { PageLoad } from './$types';
+import { dev } from '$app/environment';
 
-export const load: PageLoad = async () => {
-  const icons = import(`@iconslib/svelte/heroicons`);
-
-  return {
-    icons
-  };
-};
+export const csr = dev;

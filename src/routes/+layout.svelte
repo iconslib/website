@@ -5,7 +5,7 @@
   import Wrapper from '$components/global/wrapper.svelte';
 </script>
 
-<Wrapper>
+<Wrapper class="mb-10">
   <slot />
 </Wrapper>
 

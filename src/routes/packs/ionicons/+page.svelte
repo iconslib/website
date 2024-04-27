@@ -1,32 +1,40 @@
 <script lang="ts">
-  import type { ComponentType } from 'svelte';
-  import type { PageData } from './$types';
+  import * as icons from '@iconslib/svelte/ionicons';
+
+  import { page } from '$app/stores';
   import { data as packs } from '$lib/packs.json';
   import HeaderPack from '$components/headers/header_pack.svelte';
+  import ButtonDefault from '$components/buttons/button_default.svelte';
+  import ItemIcon from '$components/items/item_icon.svelte';
 
-  interface Props {
-    data: PageData;
-  }
-
-  const { data }: Props = $props();
+  const variantsMap = {
+    outline: 'Outline',
+    solid: 'Solid',
+    sharp: 'Sharp'
+  };
+  const variant = $derived($page.url.searchParams.get('variant') ?? 'outline');
+  const filteredIcons = $derived(
+    Object.entries(icons)
+      .filter(
+        ([key]) =>
+          key.includes(variantsMap[variant as keyof typeof variantsMap]) ||
+          (variant === 'solid' && !key.includes('Outline') && !key.includes('Sharp'))
+      )
+      .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+  );
   const packItem = packs.find((el) => el.slug === 'ionicons')!;
 </script>
 
 <HeaderPack data={packItem} />
 
-{#await data.icons}
-  <p>...waiting</p>
-{:then icons}
-  <div class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
-    {#each Object.entries(icons) as [key, icon]}
-      <div
-        class="
-          w-full h-[8rem] bg-white rounded-lg border-[1px] border-neutral-200
-          flex items-center justify-center
-        "
-      >
-        <svelte:component this={icon as ComponentType} class="w-8 h-8" />
-      </div>
-    {/each}
-  </div>
-{/await}
+<div class="w-full grid grid-cols-3 gap-5 mb-5">
+  <ButtonDefault label="Outline" isActive={variant === 'outline'} href="?variant=outline" />
+  <ButtonDefault label="Solid" isActive={variant === 'solid'} href="?variant=solid" />
+  <ButtonDefault label="Sharp" isActive={variant === 'sharp'} href="?variant=sharp" />
+</div>
+
+<div class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
+  {#each filteredIcons as [key, icon]}
+    <ItemIcon data={{ key, pack: packItem.slug, icon }} />
+  {/each}
+</div>

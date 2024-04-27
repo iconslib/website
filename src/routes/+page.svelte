@@ -1,10 +1,21 @@
 <script lang="ts">
+  import FormSearch from '$components/forms/form_search.svelte';
   import HeaderMain from '$components/headers/header_main.svelte';
 
-  import FrameworksList from '$components/lists/frameworks_list.svelte';
-  import PacksList from '$components/lists/packs_list.svelte';
+  import ListFrameworks from '$components/lists/list_frameworks.svelte';
+  import ListPacks from '$components/lists/list_packs.svelte';
 </script>
 
 <HeaderMain />
-<FrameworksList />
-<PacksList />
+
+<ListFrameworks />
+
+<div class="w-full mb-10 flex flex-col gap-5">
+  <div class="w-full">
+    <h1 class="w-full font-semibold text-2xl">Search</h1>
+  </div>
+
+  <FormSearch />
+</div>
+
+<ListPacks />

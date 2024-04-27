@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import frameworks from '$lib/frameworks';
+  import { data as frameworks } from '$lib/frameworks.json';
   import HeaderFramework from '$components/headers/header_framework.svelte';
 
   interface Props {
