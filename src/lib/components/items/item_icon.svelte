@@ -99,6 +99,42 @@
   {/if}
 {/snippet}
 
+{#snippet octicons()}
+  {#if data.icon}
+    {#if data.key.includes('12')}
+      <svelte:component this={data.icon} class="h-4 w-4 fill-neutral-950" />
+    {/if}
+
+    {#if data.key.includes('16')}
+      <svelte:component this={data.icon} class="h-6 w-6 fill-neutral-950" />
+    {/if}
+
+    {#if data.key.includes('24')}
+      <svelte:component this={data.icon} class="h-8 w-8 fill-neutral-950" />
+    {/if}
+  {/if}
+
+  {#if data.html}
+    {#if data.key.includes('12')}
+      <div class="h-4 w-4 fill-neutral-950">
+        {@html data.html}
+      </div>
+    {/if}
+
+    {#if data.key.includes('16')}
+      <div class="h-6 w-6 fill-neutral-950">
+        {@html data.html}
+      </div>
+    {/if}
+
+    {#if data.key.includes('24')}
+      <div class="h-8 w-8 fill-neutral-950">
+        {@html data.html}
+      </div>
+    {/if}
+  {/if}
+{/snippet}
+
 <div
   class="
     flex h-[8rem] w-full items-center justify-center rounded-lg
@@ -119,5 +155,9 @@
 
   {#if data.pack === 'radix'}
     {@render radix()}
+  {/if}
+
+  {#if data.pack === 'octicons'}
+    {@render octicons()}
   {/if}
 </div>

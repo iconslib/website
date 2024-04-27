@@ -11,7 +11,7 @@ const preparePacksData = async () => {
   const items = await fsp.readdir(distFolderPath);
   const packs = items.filter((el) => !el.includes('.'));
 
-  const packsFilePath = './src/lib/packs.json';
+  const packsFilePath = './src/lib/data/packs.json';
   const packsFileContent = await fsp.readFile(packsFilePath);
   const packsFileContentParsed = JSON.parse(packsFileContent);
 
@@ -20,10 +20,6 @@ const preparePacksData = async () => {
   for (const pack of packs) {
     const packFiles = await fsp.readdir(`${distFolderPath}/${pack}/esm`);
     let icons = packFiles.filter((el) => !el.includes('.svelte.d.ts'));
-
-    if (pack === 'heroicons') {
-      icons = icons.filter((el) => el.includes('24Solid'));
-    }
 
     const packData = packsFileContentParsed.data.find((el) => el.slug === pack);
 
@@ -46,7 +42,7 @@ const prepareSearchData = async () => {
   const packs = items.filter((el) => !el.includes('.'));
 
   let library = [];
-  const libraryFilePath = './src/lib/library.json';
+  const libraryFilePath = './src/lib/data/library.json';
 
   console.log('---> Building library data from icon packs');
 
