@@ -1,14 +1,19 @@
 import type { PageServerLoad } from './$types';
+import type { ComponentType } from 'svelte';
 import Fuse from 'fuse.js';
 import * as Heroicons from '@iconslib/svelte/heroicons';
 import * as Ionicons from '@iconslib/svelte/ionicons';
 import * as Feather from '@iconslib/svelte/feather';
 import * as Radix from '@iconslib/svelte/radix';
 
-import { data as library } from '$lib/library.json';
+import { data as library } from '$lib/data/library.json';
 import { render } from 'svelte/server';
 
-const combinedPacks = {
+const combinedPacks: {
+  [pack: string]: {
+    [key: string]: ComponentType;
+  };
+} = {
   heroicons: Heroicons,
   ionicons: Ionicons,
   feather: Feather,
@@ -16,7 +21,7 @@ const combinedPacks = {
 };
 const fuse = new Fuse(library, {
   keys: [
-    'pack', // will be assigned a `weight` of 1
+    'pack',
     {
       name: 'label',
       weight: 2

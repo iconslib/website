@@ -2,7 +2,7 @@
   import * as icons from '@iconslib/svelte/ionicons';
 
   import { page } from '$app/stores';
-  import { data as packs } from '$lib/packs.json';
+  import { data as packs } from '$lib/data/packs.json';
   import HeaderPack from '$components/headers/header_pack.svelte';
   import ButtonDefault from '$components/buttons/button_default.svelte';
   import ItemIcon from '$components/items/item_icon.svelte';
@@ -27,13 +27,13 @@
 
 <HeaderPack data={packItem} />
 
-<div class="w-full grid grid-cols-3 gap-5 mb-5">
+<div class="mb-5 grid w-full grid-cols-3 gap-5">
   <ButtonDefault label="Outline" isActive={variant === 'outline'} href="?variant=outline" />
   <ButtonDefault label="Solid" isActive={variant === 'solid'} href="?variant=solid" />
   <ButtonDefault label="Sharp" isActive={variant === 'sharp'} href="?variant=sharp" />
 </div>
 
-<div class="w-full grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
+<div class="grid w-full grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
   {#each filteredIcons as [key, icon]}
     <ItemIcon data={{ key, pack: packItem.slug, icon }} />
   {/each}

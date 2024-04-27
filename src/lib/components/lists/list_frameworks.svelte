@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { data as frameworks } from '$lib/frameworks.json';
+  import { data as frameworks } from '$lib/data/frameworks.json';
   import SvelteIcon from '$components/icons/svelte_icon.svelte';
   import SolidjsIcon from '$components/icons/solidjs_icon.svelte';
   import VueIcon from '$components/icons/vue_icon.svelte';
@@ -14,7 +14,7 @@
   };
 </script>
 
-<div class="w-full grid grid-cols-4 gap-5 mb-10">
+<div class="mb-10 grid w-full grid-cols-4 gap-5">
   {#each frameworks as framework}
     {#if framework.isActive}
       <ItemFramework
