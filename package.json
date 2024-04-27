@@ -12,11 +12,11 @@
     "format": "prettier --write .",
     "test:integration": "playwright test",
     "test:unit": "vitest",
-    "prepare": "node ./bin/prepare.mjs"
+    "prepare": "node ./scripts/prepare.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/rubik": "^5.0.22",
-    "@iconslib/svelte": "^0.0.14",
+    "@iconslib/svelte": "^0.1.1",
     "@playwright/test": "^1.28.1",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
@@ -41,7 +41,7 @@
   },
   "type": "module",
   "dependencies": {
-    "fuse.js": "^7.0.0",
+    "minisearch": "^6.3.0",
     "uuid": "^9.0.1"
   }
 }
