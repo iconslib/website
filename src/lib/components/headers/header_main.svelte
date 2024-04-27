@@ -24,8 +24,8 @@
         Open source icons <br /> for your next project
       </h1>
       <div class="text-3xl">
-        <p>A set of open source high quality icons for you next project.</p>
-        <p>MIT licensed, optimized, free.</p>
+        <p>A set of open source icons for you next project.</p>
+        <p>High quality, optimized, free.</p>
       </div>
     </div>
   </div>
