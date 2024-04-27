@@ -10,9 +10,9 @@
 
 <ListFrameworks />
 
-<div class="w-full mb-10 flex flex-col gap-5">
+<div class="mb-10 flex w-full flex-col gap-5">
   <div class="w-full">
-    <h1 class="w-full font-semibold text-2xl">Search</h1>
+    <h1 class="w-full text-2xl font-semibold">Search</h1>
   </div>
 
   <FormSearch />

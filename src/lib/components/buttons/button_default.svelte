@@ -25,16 +25,16 @@
   role="button"
   tabindex={0}
   class={`
-    relative block min-w-10 h-10 border-[1px] border-neutral-200 rounded-lg overflow-hidden
-    ${isActive ? 'hover:bg-neutral-50 bg-neutral-100' : 'bg-white hover:bg-neutral-100'}
+    relative block h-10 min-w-10 overflow-hidden rounded-lg border-[1px] border-neutral-200
+    ${isActive ? 'bg-neutral-100 hover:bg-neutral-50' : 'bg-white hover:bg-neutral-100'}
   `}
 >
   {#if isDisabled}
-    <div class="w-full h-full absolute top-0 left-0 bg-neutral-100/55 z-20"></div>
+    <div class="absolute left-0 top-0 z-20 h-full w-full bg-neutral-100/55"></div>
   {/if}
 
   <div
-    class={`relative z-0 w-full h-full flex flex-row gap-3 items-center justify-center ${label ? 'p-3' : 'p-2'}`}
+    class={`relative z-0 flex h-full w-full flex-row items-center justify-center gap-3 ${label ? 'p-3' : 'p-2'}`}
   >
     {label ? label : null}
   </div>

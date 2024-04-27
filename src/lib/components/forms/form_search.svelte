@@ -7,6 +7,6 @@
     value={$page.url.searchParams.get('query')}
     name="query"
     placeholder="Example: arrow up left ..."
-    class="w-full px-5 py-3 border-[1px] rounded-lg bg-white"
+    class="w-full rounded-lg border-[1px] bg-white px-5 py-3"
   />
 </form>

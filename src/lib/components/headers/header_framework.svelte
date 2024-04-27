@@ -10,13 +10,13 @@
 </script>
 
 <div
-  class="relative w-full h-[450px] bg-white border-[1px] border-neutral-200 rounded-lg p-10 mt-10 mb-5"
+  class="relative mb-5 mt-10 h-[450px] w-full rounded-lg border-[1px] border-neutral-200 bg-white p-10"
 >
-  <div class="absolute top-0 left-0 z-0 w-full h-full">
-    <img src={BackgroundSvg} alt="Background" class="w-full h-full object-cover opacity-50" />
+  <div class="absolute left-0 top-0 z-0 h-full w-full">
+    <img src={BackgroundSvg} alt="Background" class="h-full w-full object-cover opacity-50" />
   </div>
 
-  <div class="w-full h-full relative flex flex-col z-10">
+  <div class="relative z-10 flex h-full w-full flex-col">
     <div class="flex flex-row">
       <a href="/" class="w-[200px]">
         <Logo />
@@ -25,7 +25,7 @@
       <nav></nav>
     </div>
     <div class="flex flex-1 flex-col justify-end">
-      <h1 class="mt-6 mb-5 font-bold leading-9 tracking-tight text-neutral-900 md:text-5xl">
+      <h1 class="mb-5 mt-6 font-bold leading-9 tracking-tight text-neutral-900 md:text-5xl">
         Open source icons <br />for your next {title} project
       </h1>
       <div class="text-3xl">

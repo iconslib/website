@@ -11,13 +11,13 @@
   const { data }: Props = $props();
 </script>
 
-<div class="w-full bg-white border-[1px] border-neutral-200 rounded-lg">
-  <div class="w-full flex flex-row items-center gap-5 p-5 border-b-[1px] border-neutral-200">
+<div class="w-full rounded-lg border-[1px] border-neutral-200 bg-white">
+  <div class="flex w-full flex-row items-center gap-5 border-b-[1px] border-neutral-200 p-5">
     <a href={`/packs/${data.slug}`}>
-      <h2 class="w-full flex-1 font-semibold text-xl hover:underline">{data.title}</h2>
+      <h2 class="w-full flex-1 text-xl font-semibold hover:underline">{data.title}</h2>
     </a>
 
-    <div class="flex flex-1 gap-3 justify-end">
+    <div class="flex flex-1 justify-end gap-3">
       {#if data.links.github}
         <ButtonIcon icon={LogoGithub} href={data.links.github} />
       {/if}
@@ -27,7 +27,7 @@
       {/if}
     </div>
   </div>
-  <div class="w-full flex flex-row gap-5 p-5">
+  <div class="flex w-full flex-row gap-5 p-5">
     <div>
       <p>{data.icons} icons</p>
     </div>

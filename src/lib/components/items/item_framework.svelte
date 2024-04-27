@@ -13,22 +13,22 @@
 <svelte:element
   this={href ? 'a' : 'button'}
   {...!href ? { type, disabled: isDisabled } : { href }}
-  class="relative w-full border-[1px] bg-white rounded-lg overflow-hidden"
+  class="relative w-full overflow-hidden rounded-lg border-[1px] bg-white"
 >
   {#if isDisabled}
-    <div class="w-full h-full absolute top-0 left-0 bg-neutral-100/55 z-20"></div>
+    <div class="absolute left-0 top-0 z-20 h-full w-full bg-neutral-100/55"></div>
   {/if}
 
   <div class="relative z-0">
-    <div class="flex items-center justify-center p-3 h-12">
+    <div class="flex h-12 items-center justify-center p-3">
       <svelte:component this={icon} class="w-6" />
     </div>
 
     {#if label}
       <div
         class="
-        w-full border-t-[1px] border-neutral-200 p-2 bg-neutral-50
-        font-medium text-sm uppercase tracking-wide text-center"
+        w-full border-t-[1px] border-neutral-200 bg-neutral-50 p-2
+        text-center text-sm font-medium uppercase tracking-wide"
       >
         {label ? label : null}
       </div>
