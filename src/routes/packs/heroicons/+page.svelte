@@ -24,7 +24,7 @@
 
 <HeaderPack data={packItem} />
 
-<div class="mb-5 grid w-full grid-cols-4 gap-5">
+<div class="mb-5 grid w-full grid-cols-2 gap-5 lg:grid-cols-4">
   <ButtonDefault label="Outline" isActive={variant === 'outline'} href="?variant=outline" />
   <ButtonDefault label="Solid" isActive={variant === 'solid'} href="?variant=solid" />
   <ButtonDefault label="Mini" isActive={variant === 'mini'} href="?variant=mini" />

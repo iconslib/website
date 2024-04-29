@@ -14,7 +14,7 @@
   };
 </script>
 
-<div class="mb-10 grid w-full grid-cols-4 gap-5">
+<div class="mb-10 grid w-full grid-cols-2 gap-5 lg:grid-cols-4">
   {#each frameworks as framework}
     {#if framework.isActive}
       <ItemFramework
