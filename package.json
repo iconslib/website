@@ -16,12 +16,17 @@
   },
   "devDependencies": {
     "@fontsource-variable/rubik": "^5.0.22",
-    "@iconslib/svelte": "^0.1.1",
+    "@iconslib/svelte": "^0.2.0",
     "@playwright/test": "^1.28.1",
+    "@shikijs/markdown-it": "^1.3.0",
     "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/adapter-node": "^5.0.1",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/eslint": "^8.56.0",
+    "@types/markdown-it": "^14.0.1",
+    "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "autoprefixer": "^10.4.19",
@@ -32,7 +37,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.1.2",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "svelte": "^5.0.0-next.1",
+    "svelte": "^5.0.0-next.115",
     "svelte-check": "^3.6.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.0.0",
@@ -41,6 +46,7 @@
   },
   "type": "module",
   "dependencies": {
+    "markdown-it": "^14.1.0",
     "minisearch": "^6.3.0",
     "uuid": "^9.0.1"
   }

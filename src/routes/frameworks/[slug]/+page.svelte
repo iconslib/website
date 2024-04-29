@@ -12,3 +12,7 @@
 </script>
 
 <HeaderFramework {...framework} />
+
+<div class="prose max-w-full rounded-lg border-[1px] border-neutral-200 bg-white p-5 lg:p-10">
+  {@html data.content.html}
+</div>

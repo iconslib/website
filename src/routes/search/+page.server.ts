@@ -2,7 +2,7 @@ import type { PageServerLoad } from './$types';
 import type { ComponentType } from 'svelte';
 
 import { render } from 'svelte/server';
-import { librarySearch } from '$server/search';
+import { librarySearch } from '$server/services/search';
 import * as Heroicons from '@iconslib/svelte/heroicons';
 import * as Ionicons from '@iconslib/svelte/ionicons';
 import * as Feather from '@iconslib/svelte/feather';
