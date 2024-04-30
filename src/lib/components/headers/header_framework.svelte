@@ -1,11 +1,16 @@
 <script lang="ts">
+  import ButtonIcon from '$components/buttons/button_icon.svelte';
   import Logo from '$components/global/logo.svelte';
+  import type { FrameworkItemType } from '$lib/types';
+  import { LogoGithub } from '@iconslib/svelte/ionicons';
 
   interface Props {
-    title: string;
+    data: {
+      framework: FrameworkItemType;
+    };
   }
 
-  const { title }: Props = $props();
+  const { data }: Props = $props();
 </script>
 
 <div
@@ -49,14 +54,20 @@
         <Logo />
       </a>
 
-      <nav></nav>
+      <nav class="flex flex-1 justify-end">
+        <ButtonIcon
+          icon={LogoGithub}
+          href={`https://github.com/iconslib/${data.framework.slug}`}
+          target="_blank"
+        />
+      </nav>
     </div>
     <div class="flex flex-1 flex-col justify-end">
       <h1 class="mb-5 mt-6 text-3xl font-bold tracking-tight text-neutral-900 lg:text-5xl">
-        Open source icons <br />for your next {title} project
+        Open source icons <br />for your next {data.framework.title} project
       </h1>
       <div class="text-xl lg:text-3xl">
-        <p>A set of open source icons for you next {title} project.</p>
+        <p>A set of open source icons for you next {data.framework.title} project.</p>
         <p>High quality, optimized, free.</p>
       </div>
     </div>
