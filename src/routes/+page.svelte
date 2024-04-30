@@ -1,10 +1,27 @@
 <script lang="ts">
+  import SEO from '$components/global/seo.svelte';
   import FormSearch from '$components/forms/form_search.svelte';
   import HeaderMain from '$components/headers/header_main.svelte';
 
   import ListFrameworks from '$components/lists/list_frameworks.svelte';
   import ListPacks from '$components/lists/list_packs.svelte';
 </script>
+
+<SEO
+  title="Open source icons for your next project"
+  titleTemplate={`%s - IconsLib`}
+  description="A set of open source icons for you next project. High quality, optimized, free."
+  openGraph={{
+    basic: {
+      title: 'Open source icons for your next project',
+      type: 'website',
+      image: '/images/share.png'
+    },
+    optional: {
+      siteName: 'iconslib.com'
+    }
+  }}
+/>
 
 <HeaderMain />
 
