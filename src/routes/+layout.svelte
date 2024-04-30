@@ -12,6 +12,14 @@
   const { children }: Props = $props();
 </script>
 
+<svelte:head>
+  <script
+    defer
+    src="https://metrics.bitkidd.dev/hey"
+    data-website-id="5bb17685-5ee0-4fb0-958b-62f57488fdec"
+  ></script>
+</svelte:head>
+
 <Wrapper class="mb-10">
   {#if children}
     {@render children()}
