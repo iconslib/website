@@ -25,30 +25,7 @@
 
   <div class="grid w-full grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-5">
     {#each data.icons as icon}
-      <ItemIcon data={icon} />
-
-      <!--<div
-        class="
-            w-full h-[8rem] bg-white rounded-lg border-[1px] border-neutral-200
-            flex items-center justify-center
-          "
-      >
-        
-
-        {#if match.pack === 'ionicons'}
-          <svelte:component
-            this={Ionicons[match.key as keyof typeof Heroicons] as ComponentType}
-            class="w-8 h-8 fill-neutral-950 stroke-neutral-950"
-          />
-        {/if}
-
-        {#if match.pack === 'feather'}
-          <svelte:component
-            this={Feather[match.key as keyof typeof Heroicons] as ComponentType}
-            class="w-8 h-8 fill-neutral-950"
-          />
-        {/if}
-      </div>-->
+      <ItemIcon data={icon} withInfo />
     {/each}
   </div>
 </div>

@@ -25,7 +25,7 @@
   role="button"
   tabindex={0}
   class={`
-    relative block h-10 min-w-10 overflow-hidden rounded-lg border-[1px] border-neutral-200
+    relative block h-10 w-full min-w-10 overflow-hidden rounded-lg border-[1px] border-neutral-200
     ${isActive ? 'bg-neutral-100 hover:bg-neutral-50' : 'bg-white hover:bg-neutral-100'}
   `}
 >

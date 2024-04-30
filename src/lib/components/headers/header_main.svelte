@@ -1,7 +1,9 @@
 <script lang="ts">
-  import BackgroundSvg from '$lib/images/background.svg';
+  import { LogoGithub } from '@iconslib/svelte/ionicons';
 
+  import BackgroundSvg from '$lib/images/background.svg';
   import Logo from '$components/global/logo.svelte';
+  import ButtonIcon from '$components/buttons/button_icon.svelte';
 </script>
 
 <div
@@ -17,7 +19,9 @@
         <Logo />
       </a>
 
-      <nav></nav>
+      <nav class="flex flex-1 justify-end">
+        <ButtonIcon icon={LogoGithub} href="https://github.com/iconslib" target="_blank" />
+      </nav>
     </div>
     <div class="flex flex-1 flex-col justify-end">
       <h1

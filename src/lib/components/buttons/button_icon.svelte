@@ -1,21 +1,30 @@
 <script lang="ts">
   import type { ComponentType } from 'svelte';
 
-  interface Props {
+  type Props = {
     icon: ComponentType;
     type?: 'button' | 'submit';
     href?: string;
     label?: string;
+    target?: string;
     isDisabled?: boolean;
     onclick?: () => void;
-  }
+  };
 
-  const { icon, type = 'button', href, label, isDisabled = false, onclick }: Props = $props();
+  const {
+    icon,
+    type = 'button',
+    target,
+    href,
+    label,
+    isDisabled = false,
+    onclick
+  }: Props = $props();
 </script>
 
 <svelte:element
   this={href ? 'a' : 'button'}
-  {...!href ? { type, disabled: isDisabled } : { href }}
+  {...!href ? { type, disabled: isDisabled } : { href, target }}
   {onclick}
   role="button"
   tabindex={0}
