@@ -50,5 +50,8 @@
     "markdown-it": "^14.1.0",
     "minisearch": "^6.3.0",
     "uuid": "^9.0.1"
+  },
+  "engines": {
+    "node": "20"
   }
 }
