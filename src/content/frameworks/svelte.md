@@ -16,7 +16,7 @@ pnpm install @iconslib/svelte
 
 ### Usage
 
-There are two main ways to use icons from this package, by importing from a pack export or individually, wherever works best for you.
+There are two main ways to use icons from this package, by importing from a pack export or individually, whatever works best for you.
 
 ```svelte
 <script>
