@@ -27,3 +27,5 @@ There are two main ways to use icons from this package, by importing from a pack
 <AcademicCap24Outline />
 <ArrowDownLeft24Outline />
 ```
+
+You can pass all the basic SVG props to the component. We prefer Tailwind for styling, so in our case for some solid icons we will use `w-6 h-6 bg-neutral-950`, for icons that are outlined we use `w-6 h-6 stroke-neutral-950`.
