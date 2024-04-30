@@ -23,8 +23,15 @@
       image: '/share.png'
     },
     optional: {
-      siteName: 'iconslib.com'
+      siteName: 'iconslib.com',
+      description: `Open source icons for your next ${framework.title} project`
     }
+  }}
+  twitter={{
+    card: 'summary_large_image',
+    description: `Open source icons for your next ${framework.title} project`,
+    site: 'iconslib.com',
+    image: '/share.png'
   }}
 />
 

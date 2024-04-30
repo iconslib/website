@@ -24,8 +24,15 @@
       image: '/share.png'
     },
     optional: {
-      siteName: 'iconslib.com'
+      siteName: 'iconslib.com',
+      description: 'A set of open source icons for you next project. High quality, optimized, free.'
     }
+  }}
+  twitter={{
+    card: 'summary_large_image',
+    description: 'Search open source icons for your next project',
+    site: 'iconslib.com',
+    image: '/share.png'
   }}
 />
 
