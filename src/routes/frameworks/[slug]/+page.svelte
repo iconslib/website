@@ -20,7 +20,7 @@
     basic: {
       title: `Open source icons for your next ${framework.title} project`,
       type: 'website',
-      image: '/images/share.png'
+      image: '/share.png'
     },
     optional: {
       siteName: 'iconslib.com'

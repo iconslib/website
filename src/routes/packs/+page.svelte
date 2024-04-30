@@ -14,7 +14,7 @@
     basic: {
       title: 'Available icon packs',
       type: 'website',
-      image: '/images/share.png'
+      image: '/share.png'
     },
     optional: {
       siteName: 'iconslib.com'

@@ -15,7 +15,7 @@
     basic: {
       title: 'Open source icons for your next project',
       type: 'website',
-      image: '/images/share.png'
+      image: '/share.png'
     },
     optional: {
       siteName: 'iconslib.com'
