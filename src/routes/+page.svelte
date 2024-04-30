@@ -24,7 +24,8 @@
   }}
   twitter={{
     card: 'summary_large_image',
-    description: 'Open source icons for your next project',
+    title: 'IconsLib - Open source icons for your next project',
+    description: 'A set of open source icons for you next project. High quality, optimized, free.',
     site: 'iconslib.com',
     image: '/share.png'
   }}

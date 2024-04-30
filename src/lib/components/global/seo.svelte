@@ -91,7 +91,7 @@
   {#if openGraph}
     <meta property="og:title" content={openGraph.basic.title} />
     <meta property="og:type" content={openGraph.basic.type} />
-    <meta property="og:image" content={openGraph.basic.image} />
+    <meta property="og:image" content="{$page.url.origin}{openGraph.basic.image}" />
     <meta property="og:url" content={openGraph.basic.url || $page.url.href} />
 
     <!-- OG Optional -->
@@ -122,9 +122,12 @@
     {/if}
 
     <!-- OG Image -->
-    <meta property="og:image:url" content={openGraph.basic.image} />
+    <meta property="og:image:url" content="{$page.url.origin}{openGraph.basic.image}" />
     {#if openGraph.image?.secureUrl}
-      <meta property="og:image:secure_url" content={openGraph.image.secureUrl} />
+      <meta
+        property="og:image:secure_url"
+        content="{$page.url.origin}{openGraph.image.secureUrl}"
+      />
     {/if}
     {#if openGraph.image?.type}
       <meta property="og:image:type" content={openGraph.image?.type} />
@@ -175,7 +178,7 @@
       <meta name="twitter:title" content={twitter.title} />
     {/if}
     {#if twitter?.image}
-      <meta name="twitter:image" content={twitter.image} />
+      <meta name="twitter:image" content="{$page.url.origin}{twitter.image}" />
     {/if}
     {#if twitter?.imageAlt}
       <meta name="twitter:image:alt" content={twitter.imageAlt} />

@@ -28,7 +28,8 @@
   }}
   twitter={{
     card: 'summary_large_image',
-    description: `${data.pack?.title}`,
+    title: `${data.pack?.title}`,
+    description: 'A set of open source icons for you next project. High quality, optimized, free.',
     site: 'iconslib.com',
     image: '/share.png'
   }}
