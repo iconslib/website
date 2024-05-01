@@ -24,10 +24,10 @@ const combinedPacks: {
 export const load: PageServerLoad = async ({ url }) => {
   const query = url.searchParams.get('query') ?? '';
   const icons = librarySearch.search(query);
-  const iconsRendered = icons.map((el) => {
-    const { html } = render(combinedPacks[el.pack][el.key], { props: {} });
+  const iconsRendered = icons.slice(0, 100).map((el) => {
+    const { html } = render(combinedPacks[el.item.pack][el.item.key], { props: {} });
 
-    return { key: el.key, pack: el.pack, html };
+    return { ...el.item, html };
   });
 
   return {

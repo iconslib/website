@@ -1,12 +1,10 @@
-import MiniSearch from 'minisearch';
+import Fuse from 'fuse.js';
 
 import { data as library } from '$lib/data/library.json';
 
-const miniSearch = new MiniSearch({
-  fields: ['label', 'pack'],
-  storeFields: ['key', 'pack']
+const search = new Fuse(library, {
+  includeScore: true,
+  keys: ['label', 'pack', 'tags']
 });
 
-miniSearch.addAll(library);
-
-export const librarySearch = miniSearch;
+export const librarySearch = search;

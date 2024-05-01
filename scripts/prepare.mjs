@@ -51,7 +51,13 @@ const prepareSearchData = async () => {
     const icons = packFiles
       .filter((el) => !el.includes('.svelte.d.ts'))
       .map((el) => el.replace('.svelte', ''))
-      .map((el) => ({ id: uuid(), key: el, pack, label: humanizeClassCase(el) }));
+      .map((el) => ({
+        id: uuid(),
+        key: el,
+        pack,
+        label: humanizeClassCase(el),
+        tags: humanizeClassCase(el).split(' ')
+      }));
 
     library = [...library, ...icons];
   }
