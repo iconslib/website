@@ -1,12 +1,9 @@
 <script lang="ts">
   import type { ComponentType } from 'svelte';
-  import { CodeOutline } from '@iconslib/svelte/ionicons';
+  import { X, Copy, Check } from '@iconslib/svelte/feather';
   import { data as packs } from '$lib/data/packs.json';
-  import SvelteIcon from '$components/icons/svelte_icon.svelte';
   import ButtonIcon from '$components/buttons/button_icon.svelte';
-  import { XMark20Solid, XMark24Solid } from '@iconslib/svelte/heroicons';
   import ButtonDefault from '$components/buttons/button_default.svelte';
-  import { Copy } from '@iconslib/svelte/feather';
 
   interface Props {
     data: {
@@ -21,8 +18,14 @@
   const { data, withInfo = false }: Props = $props();
   const pack = $derived(packs.find((el) => el.slug === data.pack));
   let dialog = $state<HTMLDialogElement>();
+  let copied = $state(false);
 
-  const handleCopyKey = () => navigator.clipboard.writeText(data.key);
+  const handleCopyKey = () => {
+    navigator.clipboard.writeText(data.key);
+    copied = true;
+
+    setTimeout(() => (copied = false), 500);
+  };
 </script>
 
 {#snippet heroicons()}
@@ -196,7 +199,7 @@
       <h2 class="text-lg font-semibold">{pack?.title}</h2>
     </div>
     <div>
-      <ButtonIcon icon={XMark20Solid} onclick={() => dialog?.close()} />
+      <ButtonIcon icon={X} onclick={() => dialog?.close()} />
     </div>
   </div>
 
@@ -238,9 +241,22 @@
 
       <button
         onclick={handleCopyKey}
-        class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-lg border-[1px] border-neutral-200 hover:bg-neutral-200"
+        disabled={copied}
+        class={`
+          absolute right-2 top-2 flex h-8 w-8 
+          items-center justify-center rounded-lg 
+          border-[1px] transition-all ${
+            copied
+              ? 'border-green-600 bg-green-600 stroke-white'
+              : 'border-neutral-200 stroke-neutral-950 hover:bg-neutral-200'
+          }
+        `}
       >
-        <Copy class="h-4 w-4 stroke-neutral-950" />
+        {#if copied}
+          <Check class="h-4 w-4 " />
+        {:else}
+          <Copy class="h-4 w-4" />
+        {/if}
       </button>
     </div>
   </div>
