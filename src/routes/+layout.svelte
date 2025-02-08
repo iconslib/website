@@ -2,8 +2,9 @@
   import '@fontsource-variable/rubik';
   import '../app.css';
 
-  import Wrapper from '$components/global/wrapper.svelte';
   import type { Snippet } from 'svelte';
+  import { env } from '$env/dynamic/public';
+  import Wrapper from '$components/global/wrapper.svelte';
 
   interface Props {
     children: Snippet;
@@ -18,11 +19,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 
-  <script
-    defer
-    src="https://metrics.bitkidd.dev/hey"
-    data-website-id="5bb17685-5ee0-4fb0-958b-62f57488fdec"
-  ></script>
+  <script defer src={env.PUBLIC_METRICS_URL} data-website-id={env.PUBLIC_METRICS_ID}></script>
 </svelte:head>
 
 <Wrapper class="mb-10">
